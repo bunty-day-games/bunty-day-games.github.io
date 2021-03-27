@@ -13,8 +13,6 @@ class MenuControllerDev {
 
         });
 
-        this.devMode_init();
-
     }
 
     devMode_init() {
