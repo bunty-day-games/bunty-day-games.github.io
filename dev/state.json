@@ -1,0 +1,63 @@
+{
+    "map": {
+        "assetFile": "map.jpg",
+        "asset": "dev/map.jpg"
+    },
+    "masterScale": 0.1,
+    "tokenGroups": [
+        {
+            "id": "Players",
+            "expanded": true,
+            "visible": true,
+            "tokens": [
+                { 
+                    "id": "Aggy", 
+                    "assetFile": "token-Aggy.png",
+                    "asset": "dev/token-Aggy.png",
+                    "x": 100, 
+                    "y": 100, 
+                    "visible": true,
+                    "scale": 2,
+                    "dead": false
+                },
+                { 
+                    "id": "Guts", 
+                    "assetFile": "token-Guts.png",
+                    "asset": "dev/token-Guts.png",
+                    "x": 200, 
+                    "y": 200, 
+                    "visible": true,
+                    "scale": 1,
+                    "dead": true
+                }
+            ]
+        },
+        {
+            "id": "Enemies",
+            "expanded": false,
+            "visible": false,
+            "tokens": [
+                { 
+                    "id": "Tyr", 
+                    "assetFile": "token-Tyr.png",
+                    "asset": "dev/token-Tyr.png",
+                    "x": 300, 
+                    "y": 300, 
+                    "visible": true,
+                    "scale": 1,
+                    "dead": false
+                },
+                { 
+                    "id": "Gwyn", 
+                    "assetFile": "token-Gwyn.png",
+                    "asset": "dev/token-Gwyn.png",
+                    "x": 400, 
+                    "y": 400, 
+                    "visible": false,
+                    "scale": 1,
+                    "dead": false
+                }
+            ]
+        }
+    ]
+}

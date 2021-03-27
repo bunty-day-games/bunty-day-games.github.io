@@ -1,0 +1,38 @@
+/* ============================================== MENU ITEMS: DEV */
+
+#menu-dev-error-list {
+
+    border: 1px solid black;
+    padding: 8px;
+
+    list-style-type: none;
+
+}
+
+.menu-dev-error-item .info {
+
+    margin: 0;
+    padding: 2px;
+
+    font-size: 18px;
+    font-weight: normal;
+    cursor: pointer;
+
+}
+
+.menu-dev-error-item .info:hover {
+
+    background-color: black;
+    color: white;
+
+}
+
+.menu-dev-error-item .detail {
+
+    display: none;
+
+    margin: 10px 0 20px 20px;
+    /* margin-left: 20px;
+    margin-bottom: 20px; */
+
+}

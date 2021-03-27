@@ -1,0 +1,121 @@
+/* ============================================== MENU ITEMS: TOKENS */
+
+#menu-tokens .master-scale {
+
+    width: 100%;
+
+}
+
+#menu-tokens .master-scale-display {
+
+    text-align: center;
+    
+}
+
+#menu-tokens-group-list {
+
+    padding: 0;
+
+    list-style-type: none;
+
+}
+
+.menu-tokens-group {
+
+    margin-bottom: 20px;
+
+}
+
+.menu-tokens-group .visible {
+
+    display: inline-block;
+
+}
+
+.menu-tokens-group .id {
+
+    display: inline;
+
+    vertical-align: middle;
+
+    font-weight: normal;
+
+}
+
+.menu-tokens-group .expand {
+
+    float: right;
+
+}
+
+.menu-tokens-group .tokens {
+
+    display: none;
+
+    margin-top: 10px;
+    border: 1px solid black;
+    padding: 8px;
+
+    list-style-type: none;
+
+}
+
+.menu-tokens-token .option {
+
+    display: inline-block;
+
+    width: 15px;
+    height: 15px;
+
+    /* otherwise vertical-align doesn't center the text */
+    line-height: 15px;
+    font-size: 20px;
+
+    border: 2px solid black;
+
+}
+
+.menu-tokens-token .id {
+
+    display: inline;
+
+    vertical-align: middle;
+
+    margin-left: 8px;
+
+    font-weight: normal;
+
+}
+
+.menu-tokens-token .options {
+
+    float: right;
+
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
+
+.menu-tokens-token-options {
+
+    margin: 20px;
+
+}
+
+.menu-tokens-token-options .token-scale {
+
+    vertical-align: middle;
+    width: 90px;
+
+}
+
+.menu-tokens-token-options .token-options-label {
+
+    display: inline-block;
+    width: 50px;
+    vertical-align: middle;
+
+}

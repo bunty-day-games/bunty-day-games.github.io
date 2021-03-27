@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuntyQuest</title>
+
+    <link rel="stylesheet" href="css/general-ui.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/menu-dev.css">
+    <link rel="stylesheet" href="css/menu-game.css">
+    <link rel="stylesheet" href="css/menu-tokens.css">
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+
+<body>
+
+    <div id="game"></div>
+
+    <div id="menu">
+        <div id="menu-buttons">
+            <div class="menu-button hover-shadow" id="menu-buttons-game">Gam</div>
+            <div class="menu-button hover-shadow" id="menu-buttons-tokens">Tok</div>
+            <div class="menu-button hover-shadow" id="menu-buttons-dev">Dev</div>
+        </div>
+        <div id="menu-items">
+            <div class="menu-item" id="menu-game">
+                <h1>Game</h1>
+                <div class="start-new button-general hover-shadow">Start new</div>
+                <div class="load-existing button-general hover-shadow">Load</div>
+                <div class="save button-general hover-shadow">Save</div>
+            </div>
+            <div class="menu-item" id="menu-tokens">
+                <h1>Tokens</h1>
+                <input class="master-scale" type="range" min="0.1" max="2" step="0.05">
+                <div class="master-scale-display">0</div>
+                <ul id="menu-tokens-group-list"></ul>
+            </div>
+            <div class="menu-item" id="menu-dev">
+                <h1>Dev</h1>
+                <div class="start-dev button-general hover-shadow">Start dev</div>
+                <ul id="menu-dev-error-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <template id="modal-template">
+    <div class="modal" id="modal">
+        <div class="window">
+            <div class="toolbar">
+                <h1 class="title"></h1>
+                <div class="close button-square hover-shadow">X</div>
+            </div>
+            <div class="content"></div>
+        </div>
+    </div>
+</template>
+    <template id="modal-confirm-template">
+    <div class="modal-confirm modal-dialog">
+        <div class="text"></div>
+        <div class="options"></div>
+    </div>
+</template>
+    <template id="modal-prompt-template">
+    <div class="modal-prompt modal-dialog">
+        <div class="input">
+            <label class="text"></label><input type="text" class="input-text">
+        </div>
+        <div class="options"></div>
+    </div>
+</template>
+    <template id="menu-dev-error-item-template">
+    <li class="menu-dev-error-item">
+        <h2 class="info"></h2>
+        <div class="detail"></div>
+    </li>
+</template>
+    <template id="menu-game-start-load-template">
+    <div class="modal start-load">
+        <div class="window">
+            <div class="toolbar">
+                <h1 class="title"></h1>
+                <div class="close button-square hover-shadow">X</div>
+            </div>
+            <div class="content">
+                <div class="master-scale" hidden></div>
+                <div class="input-field hide-new">
+                    <label><h2>File</h2>
+                        <label class="button-general hover-shadow" tabindex="0">
+                            <input class="file-picker" type="file" accept="application/json">Select
+                        </label>
+                        <span class='id-display hide-new'></span>
+                    </label>
+                </div>
+                <div class="input-field hide-load">
+                    <label><h2>Title</h2>
+                        <input type="text" class="id" tabindex="0">
+                    </label>
+                </div>
+                <div class="input-field">
+                    <label><h2>Map</h2>
+                        <label class="button-general hover-shadow map-picker-label" tabindex="0">
+                            <input class="map-picker" type="file" accept=".png,.jpg,.jpeg">Select
+                        </label>
+                        <span class="map-display"></span>
+                        <span class="map-url" hidden></span>
+                    </label>
+                </div>
+                <div class="input-field">
+                    <label><h2>Tokens</h2>
+                        <div class="button-general hover-shadow add-group" tabindex="0">Add group</div>
+                    </label>
+                    <label class="button-general hover-shadow hide-new" tabindex="0">
+                        <input class="image-multiselect" type="file" accept=".png,.jpg,.jpeg" multiple>Image Multiselect
+                    </label>
+                </div>
+                <div class="input-field">
+                    <ul class="token-groups"></ul>
+                </div>
+                <div class="input-field right">
+                    <div class="button-general hover-shadow start" tabindex="0">Start</div>
+                    <div class="button-general hover-shadow cancel" tabindex="0">Cancel</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+    <template id="menu-game-start-new-token-group-template">
+    <li class="modal-start-new-game-group">
+        <div class="button-square hover-shadow inline delete" tabindex="0">x</div>
+        <div class="button-square inline toggle" tabindex="0">-</div>
+        <input type="text" class="id" tabindex="0">
+        <div class="checkbox inline visible" tabindex="0">o</div>
+        <div class="button-general hover-shadow add-token" tabindex="0">Add token</div>
+        <ul class="tokens"></ul>
+    </li>
+</template>
+    <template id="menu-game-start-new-token-template">
+    <li class="modal-start-new-game-token">
+        <div class="button-square hover-shadow inline delete" tabindex="0">x</div>
+        <input type="text" class="id" tabindex="0">
+        <label class="button-square hover-shadow inline image-button" tabindex="0">
+            <input class="image" type="file" accept=".png,.jpg,.jpeg">:)
+        </label>
+        <span class="image-url" hidden></span>
+        <div class="image-filename inline">...</div>
+        <label>x:<input type="number" step="1" value="0" class="number x" tabindex="0"></label>
+        <label>y:<input type="number" step="1" value="0" class="number y" tabindex="0"></label>
+        <div class="checkbox inline visible" tabindex="0">o</div>
+        <div class="scale" hidden></div>
+        <div class="dead" hidden></div>
+    </li>
+</template>
+    <template id="menu-tokens-group-template">
+    <li class="menu-tokens-group">
+        <div class="visible checkbox">o</div>
+        <h2 class="id"></h2>
+        <div class="expand button button-square">+</div>
+        <ul class="tokens"></ul>
+    </li>
+</template>
+    <template id="menu-tokens-token-template">
+    <li class="menu-tokens-token">
+        <div class="visible option checkbox">o</div>
+        <h3 class="id"></h3>
+        <div class="option options">☰</div>
+    </li>
+</template>
+    <template id="menu-tokens-token-options-template">
+    <div class="menu-tokens-token-options">
+        <div>
+            <label class="token-options-label">Scale</label>
+            <input class="token-scale" type="range" min="0.1" max="2" step="0.05">
+            <label class="token-options-label token-scale-display"></label>
+        </div>
+        <div>
+            <label class="token-options-label">Dead</label>
+            <div class="token-dead checkbox option">±</div>
+        </div>
+    </div>
+</template>
+
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/phaser.js"></script>
+
+    <script type="text/javascript" src="src/UIHelpers.js"></script>
+
+    <script type="text/javascript" src="src/ErrorHandler.js"></script>
+    <script type="text/javascript" src="src/PubSub.js"></script>
+    <script type="text/javascript" src="src/MasterController.js"></script>
+
+    <script type="text/javascript" src="src/MenuController-Game.js"></script>
+    <script type="text/javascript" src="src/MenuController-Tokens.js"></script>
+    <script type="text/javascript" src="src/MenuController-Dev.js"></script>
+
+    <script type="text/javascript" src="src/GameState.js"></script>
+    <script type="text/javascript" src="src/GameController.js"></script>
+
+    <script>
+
+        let game = null;
+        let gameState = null;
+
+        let eh = new ErrorHandler();
+        let ps = new PubSub();
+        let mc = new MasterController();
+
+    </script>
+
+</body>

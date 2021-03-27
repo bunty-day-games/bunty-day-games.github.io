@@ -1,0 +1,99 @@
+/* ============================================== GENERAL UI */
+
+.hover-shadow {
+
+    transition: margin-left 0.1s, box-shadow 0.2s;
+
+}
+
+.hover-shadow:hover {
+
+    box-shadow: -3px -3px black;
+
+}
+
+.button-general {
+
+    display: inline;
+
+    height: 60px;
+    /* otherwise vertical-align doesn't center the text */
+    line-height: 50px;
+    padding: 3px 6px 3px 6px;
+    margin-bottom: 10px;
+    
+    text-align: center;
+    vertical-align: middle;
+
+    border: 3px solid black;
+    
+    font-size: 18px;
+    font-weight: normal;
+    background-color: rgb(240, 240, 240);
+
+    cursor: pointer;
+
+}
+
+.button-general:hover {
+
+    background-color: white;
+
+}
+
+.button-square {
+
+    width: 25px;
+    height: 25px;
+
+    /* otherwise vertical-align doesn't center the text */
+    line-height: 25px;
+    vertical-align: middle;
+    text-align: center;
+
+    border: 3px solid black;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+.checkbox {
+
+    width: 25px;
+    height: 25px;
+
+    /* otherwise vertical-align doesn't center the text */
+    line-height: 25px;
+    vertical-align: middle;
+    text-align: center;
+
+    border: 3px solid black;
+
+    font-size: 30px;
+    font-weight: bold;
+
+    color: lightgrey;
+    cursor: pointer;
+
+}
+
+.number {
+
+    width: 55px;
+
+}
+
+.inline {
+
+    display: inline-block;
+
+}
+
+.error {
+
+    background-color: pink !important;
+
+}

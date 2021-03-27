@@ -1,0 +1,156 @@
+/* ============================================== MODAL */
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.2);
+
+}
+
+.modal .window {
+
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 900px;
+    /* height: 550px; */
+
+    /* width: 50%;
+    height: 50%; */
+
+    border: 4px solid black;
+    background-color: white;
+
+}
+
+.modal .toolbar {
+
+    width: 100%;
+    height: 40px;
+
+    border-bottom: 4px solid black;
+
+    background-color: rgb(240, 240, 240);
+
+}
+
+.modal .toolbar > .button-square {
+
+    background-color: white;
+
+}
+
+.modal .title {
+
+    float: left;
+
+    margin: 4px 0px 4px 8px;
+
+    font-size: 26px;
+    font-weight: normal;
+
+}
+
+.modal .close {
+
+    float: right;
+
+    margin-top: 4px;
+    margin-right: 4px;
+
+}
+
+.modal .content {
+
+    /* this forces width: 100% to take padding into account */
+    box-sizing: border-box;
+
+    width: 100%;
+
+    padding: 20px;
+
+}
+
+.modal .content h2 {
+
+    display: inline-block;
+
+    width: 120px;
+
+    /* align vertically with input field */
+    vertical-align: middle;
+
+    margin: 0;
+
+    font-weight: normal;
+
+}
+
+.modal .content .input-field {
+
+    margin-bottom: 10px;
+
+}
+
+.modal .content {
+
+    /* this allows floating the start/cancel buttons right without trashing the dynamic height of the modal */
+    /* can remove when modals have a fixed height */
+    overflow: hidden;
+
+}
+
+.modal .content .input-field.right {
+
+    float: right;
+
+}
+
+.modal-dialog .text {
+
+    text-align: center;
+    font-size: 24px;
+
+}
+
+.modal-dialog .options {
+
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+.modal-dialog .options div:last-child {
+
+    margin-left: 20px;
+
+}
+
+.modal-prompt .input {
+
+    text-align: center;
+
+}
+
+.modal-prompt .text {
+
+    vertical-align: middle;
+
+}
+
+.modal-prompt .input-text {
+
+    margin-left: 12px;
+
+}

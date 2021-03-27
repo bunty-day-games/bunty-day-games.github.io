@@ -1,0 +1,86 @@
+/* ============================================== MENU ITEMS: GAME */
+
+input[type="file"] {
+    
+    /* https://stackoverflow.com/questions/572768/styling-an-input-type-file-button/25825731#25825731 */
+    display: none;
+
+}
+
+#menu-game-select-state {
+
+    width: 100%;
+
+    font-size: 14px;
+
+}
+
+#menu-game h2, h3 {
+
+    font-weight: normal;
+
+}
+
+#modal-load-existing-game .id-display, .map-display {
+
+    margin-left: 20px;
+
+}
+
+.start-load .token-groups {
+
+    /* this forces width: 100% to take padding into account */
+    box-sizing: border-box;
+
+    height: 290px;
+    overflow-y: auto;
+
+    padding: 12px;
+    border: 2px solid black;
+
+    list-style-type: none;
+
+}
+
+.modal-start-new-game-group .delete {
+
+    background-color: rgb(240, 240, 240);
+
+}
+
+.modal-start-new-game-group ul {
+
+    list-style-type: decimal;
+
+}
+
+.modal-start-new-game-group ul li {
+
+    padding: 4px 0 4px 0;
+
+}
+
+.modal-start-new-game-token .delete {
+
+    background-color: rgb(240, 240, 240);
+
+}
+
+.modal-start-new-game-token .image-button {
+
+    background-color: rgb(240, 240, 240);
+
+}
+
+.modal-start-new-game-token .image-filename {
+
+    width: 200px;
+
+    /* hide overflowing text with ellipsis */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    vertical-align: middle;
+
+}
